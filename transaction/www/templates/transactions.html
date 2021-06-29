@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Cobra Bank {% endblock %}
+{% block content %}
+
+    <div class="transactions" id="transaction">
+    
+     
+      <a class="nav-item nav-link" id="withdrawal" href="/withdrawal">Withdrawal</a>
+      <a class="nav-item nav-link" id="deposit" href="/deposit">Deposit</a>
+      <a class="nav-item nav-link" id="transfer" href="/transfer">Transfer</a>
+      <a class="nav-item nav-link" id="balance" href="/balance">Show Balance</a>
+      
+     
+    </div>
+    <form class="form-inline" method="POST">
+      <div class="form-group">
+        <label class="sr-only" for="InputAmount">Amount (in dollars)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$ </div>
+          <input type="number" class="form-control" id="InputAmount" name="InputAmount" placeholder="Amount">
+        <div class="input-group-addon">.00 </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Cash Amount</button>
+    </form>
+    <h1 align="center">Account balance</h1>
+      <p>{% block balance%}{% endblock%}</p>
+{% endblock%}
